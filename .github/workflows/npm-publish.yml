@@ -42,7 +42,7 @@ jobs:
 
       - name: Release
         run: |
-          npm whoiam
+          npm whoami
           yarn release
           git push --follow-tags origin main && npm publish
         env:

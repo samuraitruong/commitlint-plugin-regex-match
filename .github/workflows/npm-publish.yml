@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
-      - run: npm ci
-      - run: npm test
+      - run: yarn install
+      - run: yarn test
 
   publish-npm:
     needs: build
@@ -33,8 +33,18 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: yarn release
-      - run: git push --follow-tags origin main && npm publish
+      - name: Setup Git Identify
+        run: |
+          git config --global user.email "samuraitruong@users.noreply.github.com"
+          git config --global user.name "Release Me"
+      - name: Install depdendenvies
+        run: yarn install
+
+      - name: Release
+        run: |
+          yarn release
+          git push --follow-tags origin main && npm publish
+
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

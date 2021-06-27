@@ -1,6 +1,6 @@
 {
   "name": "commitlint-plugin-regex-match",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "The commitlint plugin to add function that allow match regex in the commit message",
   "main": "index.js",
   "scripts": {

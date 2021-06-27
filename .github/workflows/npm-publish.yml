@@ -45,6 +45,8 @@ jobs:
           yarn release
           git push --follow-tags origin main && npm publish
 
-      - run: npm publish
+      - run: |
+          npm whoiam
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

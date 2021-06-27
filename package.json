@@ -1,10 +1,11 @@
 {
   "name": "commitlint-plugin-regex-match",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "The commitlint plugin to add function that allow match regex in the commit message",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "standard-version",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
   },
   "homepage": "https://github.com/samuraitruong/commitlint-plugin-regex-match#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "3.3.0"
+    "cz-conventional-changelog": "3.3.0",
+    "standard-version": "^9.3.0"
   },
   "config": {
     "commitizen": {
